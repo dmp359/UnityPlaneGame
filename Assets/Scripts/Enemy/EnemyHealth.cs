@@ -22,6 +22,9 @@ public class EnemyHealth : MonoBehaviour
             Destroy(collision.gameObject, deathDelay); // destroy bullet
             Destroy (this.gameObject, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + deathDelay); // destroy plane
 
+        } else if (collision.gameObject.CompareTag("Enemy")) {
+            GetComponent<Animator>().SetBool("isDead", true);
+            Destroy(this.gameObject, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + deathDelay); // destroy plane
         }
 	}
 }

@@ -65,7 +65,7 @@ public class SnakeMovement : MonoBehaviour {
         float distanceToEnd = Vector2.Distance(transform.position, new Vector2(dir * TravelWidth, goalHeight));
         if (distanceToEnd < slowDownDistance)
         {
-            // rb.AddForce(new Vector2(slowDownFactor, 0));
+           // rb.AddForce(new Vector2(slowDownFactor, 0));
         }
       //  print(distanceToEnd);
         // End is reached. Turn around
