@@ -8,6 +8,7 @@ public class ShootController : MonoBehaviour
     private float yOffset = .25f;
     private int cannon = -1;
     [SerializeField] private float bulletLaunchForce = 50;
+
     void Start()
 	{
 
@@ -17,8 +18,10 @@ public class ShootController : MonoBehaviour
 	{
         if (Input.GetKeyDown(KeyCode.Space)) {
             GameObject instance = Instantiate(Resources.Load("Bullet", typeof(GameObject)), transform.position + new Vector3(cannon * xOffset, yOffset, -1), Quaternion.identity) as GameObject;
-            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bulletLaunchForce));
-            cannon *= -1;
+
+            // Shoot at appropriate angle. Note: not really working well on some quadrants
+            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Sin(transform.eulerAngles.z) * bulletLaunchForce, Mathf.Cos(transform.eulerAngles.z) * bulletLaunchForce));
+            cannon *= -1; // alternate shooting
             Destroy(instance, 6);
         }
 	}
