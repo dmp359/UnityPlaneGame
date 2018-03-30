@@ -7,7 +7,7 @@
       <File FileName="Assets/Scripts/Background/RepeatingBackground.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemy/SnakeMovement.cs" Line="96" Column="24" />
       <File FileName="Assets/Scripts/AIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/EnemyHealth.cs" Line="44" Column="19" />
+      <File FileName="Assets/Scripts/Enemy/EnemyHealth.cs" Line="50" Column="1" />
       <File FileName="Assets/Scripts/Player/PlayerHealth.cs" Line="22" Column="10" />
       <File FileName="Assets/Scripts/Player/NewMonoBehaviour.cs" Line="4" Column="30" />
       <File FileName="Assets/Scripts/Allies/AllyController.cs" Line="34" Column="42" />

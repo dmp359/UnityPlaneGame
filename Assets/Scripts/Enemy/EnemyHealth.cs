@@ -41,6 +41,7 @@ public class EnemyHealth : MonoBehaviour
             return;
         
         rb.freezeRotation = false;
+        this.tag = "Untagged";
         GetComponentInChildren<Canvas>().enabled = false;
         GetComponent<Animator>().SetBool("isDead", true);
         Destroy(this.gameObject, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + deathDelay); // destroy plane
