@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     private float deathDelay = .2f;
 
     private Rigidbody2D rb;
+    public AIManager AIMan; // for reporting back death
+    private bool iDied = false;
 	private void Start()
 	{
         hp = 100;
@@ -20,10 +22,11 @@ public class EnemyHealth : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
+
         if (collision.gameObject.CompareTag("Bullet")) {
             
             // TODO: Play bullet impact effect
-            hp -= 20; // TODO: Make bullet damage class
+            hp -= 50; // TODO: Make bullet damage class
             if (hp > 0)
                 Destroy(collision.gameObject, 0); // destroy bullet now
             else {
@@ -39,11 +42,14 @@ public class EnemyHealth : MonoBehaviour
     private void OnDeath() {
         if (hp > 0)
             return;
-        
         rb.freezeRotation = false;
         this.tag = "Untagged";
         GetComponentInChildren<Canvas>().enabled = false;
         GetComponent<Animator>().SetBool("isDead", true);
+        if (!iDied) {
+            AIMan.OnPlaneDeath(); // let the wave know a plane died
+            iDied = true;
+        }
         Destroy(this.gameObject, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + deathDelay); // destroy plane
     }
 }

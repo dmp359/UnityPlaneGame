@@ -185,7 +185,6 @@
 'Assets/Scripts/Background/ScrollingObject.cs'
 'Assets/Scripts/Enemy/EnemyHealth.cs'
 'Assets/Scripts/Enemy/SnakeMovement.cs'
-'Assets/Scripts/Player/NewMonoBehaviour.cs'
 'Assets/Scripts/Player/PlayerController.cs'
 'Assets/Scripts/Player/PlayerHealth.cs'
 'Assets/Scripts/Player/ShootController.cs'

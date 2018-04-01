@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc59774cc1b8450686006172786bb15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLaunchForce: 200
+  bulletLaunchForce: 500
 --- !u!114 &1858298047
 MonoBehaviour:
   m_ObjectHideFlags: 0
